@@ -8,26 +8,27 @@
 </head>
 
 <body>
+    <h1 id="activity"></h1>
+    <h3>Learn From:
+        <a id="explore-link" href=""></a>
+    </h3>
 
-</body>
-<h1 id="activity"></h1>
-<h3>Learn From:
-    <a id="explore-link" href=""></a>
-</h3>
 
-<script>
-    function doSomething() {
-        fetch('http://www.boredapi.com/api/activity/')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById("activity").innerText = data.activity;
-                document.getElementById("explore-link").innerText = data.link;
-            })
-    }
-    doSomething();
-    setInterval(() => {
+
+    <script>
+        function doSomething() {
+            fetch('http://www.boredapi.com/api/activity/')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("activity").innerText = data.activity;
+                    document.getElementById("explore-link").innerText = data.link;
+                })
+        }
         doSomething();
-    }, 10000);
-</script>
+        setInterval(() => {
+            doSomething();
+        }, 10000);
+    </script>
+</body>
 
 </html>
